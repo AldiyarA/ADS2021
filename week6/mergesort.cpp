@@ -6,7 +6,7 @@ void merge(vector<int> &a, int l, int m, int r){
     int sz1 = m-l+1;
     int sz2 = r-m;
     vector<int> a1(sz1);
-    vector<int> a2(sz1);
+    vector<int> a2(sz2);
     for (int i = 0; i < sz1; i++){
         a1[i] = a[l+i];
     }
@@ -16,7 +16,7 @@ void merge(vector<int> &a, int l, int m, int r){
     int idx = l, idx1 = 0, idx2 = 0;
     while (idx1 < sz1 && idx2 < sz2)
     {
-        if (a1[idx1] < a2[idx2]){
+        if (a1[idx1] <= a2[idx2]){
             a[idx++] = a1[idx1++];
         }else{
             a[idx++] = a2[idx2++];
